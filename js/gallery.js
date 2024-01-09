@@ -50,6 +50,24 @@ function swapPhoto() {
   }
 };
 
+function backPhoto() {
+  //Add code here to access the #slideShow element.
+  document.getElementById('photo').src = mImages[mCurrentIndex].url;
+  document.getElementsByClassName('location')[0].innerHTML = "location" + mImages[mCurrentIndex].location;
+  document.getElementsByClassName('description')[0].innerHTML = "description" + mImages[mCurrentIndex].description;
+  document.getElementsByClassName('date')[0].innerHTML = "date" + mImages[mCurrentIndex].date;
+  //with a new image from your images array which is loaded 
+  //from the JSON string
+  console.log('swap photo');
+  mCurrentIndex--;
+  
+  if(
+	  mCurrentIndex < 0
+  ) {
+	  mCurrentIndex = 12;
+  }
+};
+
 // Counter for the mImages array
 var mCurrentIndex = 0;
 
@@ -126,9 +144,16 @@ function fetchJSON(){
   mRequest.send();
 };
 
-document.getElementById("indicator-btn").addEventListener("click", click());
-
-function click(){
-  $("#indicator").addClass("rot270");
-  $("#indicator").removeClass("rot90");
-}
+$(document).ready(function(){
+	$(".moreIndicator").click(function(){
+		if ($(".moreIndicator").hasClass("rot90")){
+			$(".moreIndicator").removeClass("rot90")
+			$(".moreIndicator").addClass("rot270")
+			$("div.details").fadeToggle("fast", "linear")
+		} else {
+			$(".moreIndicator").removeClass("rot270")
+			$(".moreIndicator").addClass("rot90")
+			$("div.details").fadeToggle("fast", "linear")
+		}
+  }
+)});
