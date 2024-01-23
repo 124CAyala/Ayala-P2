@@ -97,6 +97,18 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 }
 
 $(document).ready( function() {
+  const queryString = window.location.search;
+  console.log(queryString);
+  const urlParams = new URLSearchParams(queryString);
+  const location = urlParams.get('imgLocation')
+  console.log(location);
+
+  const description = urlParams.get('description')
+  console.log(description);
+
+  const date = urlParams.get('date')
+  console.log(date);
+
   
   // This initially hides the photos' metadata information
   //$('.details').eq(0).hide();
@@ -157,3 +169,4 @@ $(document).ready(function(){
 		}
   }
 )});
+
