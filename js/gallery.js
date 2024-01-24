@@ -97,8 +97,17 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 }
 
 $(document).ready( function() {
-  const queryString = window.location.search;
-  console.log(queryString);
+  var queryString = window.location.search;
+  if (queryString) {
+    queryString = queryString.slice(6);
+    console.log(queryString);
+    mUrl = queryString;
+    
+  } else {
+    mUrl = 'images.json';
+  }
+  
+
   const urlParams = new URLSearchParams(queryString);
   const location = urlParams.get('imgLocation')
   console.log(location);

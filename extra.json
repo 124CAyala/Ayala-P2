@@ -1,0 +1,28 @@
+{
+    "images": [
+        {
+            "imgPath": "img/characters/mario.jpg",
+            "imgLocation": "First image (index 0)",
+            "description": "Mario",
+            "date": "01/01/2016"
+        },
+        {
+            "imgPath": "img/characters/luigi.jpg",
+            "imgLocation": "Second image (index 1)",
+            "description": "Luigi",
+            "date": "02/01/2016"
+        },
+        {
+            "imgPath": "img/characters/peach.jpg",
+            "imgLocation": "Third image (index 2)",
+            "description": "Princess Peach",
+            "date": "03/01/2016"
+        },
+    {
+        "imgPath": "img/characters/daisy.jpg",
+      "imgLocation": "Fourth image (index 3)",
+      "description": "Princess Daisy",
+      "date": "04/01/2016"
+    }
+  ]
+}
